@@ -1,0 +1,599 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: 'youyuan';
+    font-weight: normal;
+}
+
+@keyframes myScale {
+    0% {
+        transform: scale(1.6);
+        -ms-transform: scale(1.6);
+        -moz-transform: scale(1.6);
+        -webkit-transform: scale(1.6);
+        -o-transform: scale(1.6)
+    }
+    100% {
+        transform: scale(1);
+        -ms-transform: scale(1);
+        -moz-transform: scale(1);
+        -webkit-transform: scale(1);
+        -o-transform: scale(1)
+    }
+}
+@keyframes widthSwith {
+    0% {
+        width: 80%;
+        opacity: 1
+    }
+    25% {
+        width: 40%;
+        opacity: .5
+    }
+    50% {
+        width: 0;
+        opacity: 0
+    }
+    75% {
+        width: 40%;
+        opacity: .5
+    }
+    100% {
+        width: 80%;
+        opacity: 1
+    }
+}
+@keyframes slip {
+    0%{
+        transform: translateY(200px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes leftWidthMove {
+    0%{
+        width: 2%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+@keyframes leftWidthSmall {
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 0%;
+    }
+}
+@keyframes move {
+    from {
+        bottom: 0px;
+    }
+
+    to {
+        bottom: -50px;
+    }
+}
+@keyframes sunScale {
+    from {
+        box-shadow: 0 0 0 #fff;
+        transform: scale(1);
+    }
+
+    to {
+        box-shadow: 0 0 50px #fff;
+        transform: scale(1.2);
+    }
+}
+
+section {
+    width: 100%;
+    display: none;
+}
+
+section.pageOne {
+    background: url(images/bg4.jpg) no-repeat center center;
+    animation: myScale 0.4s ;
+}
+/*侧边栏*/
+aside {
+    width: 40px;
+    position: fixed;
+    top: 40%;
+    display: block;
+    right: 10px;
+}
+
+aside a {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    background-color: #d9d9d9;
+    margin-top: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+}
+
+aside a span {
+    width: 60px;
+    height: 20px;
+    display: none;
+    position: absolute;
+    top: -2px;
+    color: #80d6f2;
+    right: 25px;
+    /*font-size: ;*/
+    text-align: right
+}
+
+aside a:hover span {
+    display: block
+}
+
+aside .curA {
+    background: #80d6f2
+}
+
+aside .curA span {
+    color: #80d6f2;
+    text-decoration: underline
+}
+
+/*第一页*/
+/*导航栏*/
+nav {
+    position: relative;
+    width: 100%;
+}
+
+nav .navWrap {
+    margin: 0 auto;
+    padding-top: 18px;
+    width: 80%;
+    overflow: hidden;
+}
+
+.resumeLogo {
+    width: 20%;
+    float: left;
+}
+
+.resumeLogo a {
+    color: #ffffff;
+    font-size: 45px;
+    text-decoration: none;
+}
+
+.navBar {
+    width: 60%;
+    float: right;
+}
+
+.navBar ul li {
+    width: 20%;
+    float: left;
+    font-size: 16px;
+}
+
+.navBar ul li a {
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    text-decoration: none;
+    top: 20px;
+    font-size: 18px;
+    transition: color .5s ease-in;
+}
+
+.navBar ul li a:hover {
+    color: #80d6f2;
+}
+
+.navBar ul li a:after {
+    width: 0;
+    height: 1px;
+    content: "";
+    position: absolute;
+    left: 16px;
+    bottom: -5px;
+    background: #80d6f2;
+    transition: width .5s ease-in;
+
+}
+
+.navBar ul li a:hover:after {
+    width: 80%;
+}
+
+.center {
+    width: 50%;
+    height: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.icon {
+    height: 30%;
+    margin: 0 auto;
+    padding: 6px;
+    text-align: center;
+    border-radius: 50% 50%;
+}
+
+.icon img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    vertical-align: middle;
+    box-shadow:5px 5px 4px  black;
+}
+
+.text {
+    height: 60%;
+}
+
+.text h2 {
+    height: 18%;
+    min-height: 38px;
+    margin: 6px auto 0 auto;
+    text-align: center;
+    color: #ffffff;
+}
+
+.text h3 {
+    height: 18%;
+    min-height: 32px;
+    margin: 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.text hr {
+    width: 80%;
+    height: 1px;
+    background: #999999;
+    border: 0;
+    margin: 0 auto 8% auto;
+    animation: widthSwith 1s;
+}
+
+.downIcon {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    left: 0;
+    bottom: 0;
+}
+
+.downIcon a {
+    width: 51px;
+    height: 51px;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer
+}
+
+.downIcon a span {
+    width: 18px;
+    height: 18px;
+    display: block;
+    margin: 15px;
+    background: url(images/sprite_img.png) no-repeat -18px -50px;
+}
+
+.downIcon a:hover {
+    border: 1px solid #80d6f2
+}
+
+/*第二页*/
+.pageTwo{
+    background-color: #f4f4f4;
+}
+.pageTwo .conWrap,.pageTwo .myInfo,.pageThree .conWrap,.pageFour .conWrap,.pageFive .conWrap {
+    animation: slip 1s;
+}
+.conWrap{
+    width: 60%;
+    margin: 0 auto 0;
+    padding: 20px 0;
+    overflow: hidden;
+}
+.titWrap{
+    text-align: center;
+    position: relative;
+}
+.titWrap h1{
+    width: 100%;
+    margin: 30px auto 50px;
+    position: relative;
+   font-size: 26px;
+}
+.titWrap h1:after{
+    content: "";
+    width: 100%;
+    position: absolute;
+    bottom: -26px;
+    left: 0;
+    border: 1px dashed #9eddf2;
+    animation: leftWidthSmall 25s linear 1s infinite;
+}
+.titWrap .breakLine{
+    width: 2%;
+    height: 20px;
+    position: absolute;
+    top: 52px;
+    right: 0;
+    animation:leftWidthMove 25s linear 1s infinite;
+    /*background-color: pink;*/
+}
+.titWrap .breakLine span{
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: url(images/sprite_img.png) no-repeat -37px -50px
+}
+.titWrap h2{
+    padding-top: 13px; ;
+    font-size: 21px;
+}
+
+.myInfo {
+    width: 100%;
+    float: left;
+    padding: 0 20px;
+}
+
+.myInfo table{
+    margin: 20px auto;
+    width: 60%;
+}
+.myInfo table tr td {
+    font-size: 17px;
+    padding: 15px 15px 15px 30px;
+    text-align: left;
+}
+.myInfo table tr td img{
+    border-radius: 50%;
+}
+.myInfo table tr td span {
+    width: 30px;
+    height: 30px;
+    display: block
+}
+/*第三页*/
+.pageThree{
+    animation: slip 1s;
+    display: none;
+}
+
+.myInfo{
+    width:100%;;
+    overflow: hidden;
+}
+.canvasWrap{
+    width: 50%;
+    overflow: hidden;
+    padding: 30px 0 0 0;
+    float: left;
+}
+.canvasCon{
+    width: 160px;
+    height: 160px;
+    margin: 25px 15px;
+    position: relative;
+    float: left;
+}
+.textCon{
+    width: 160px;
+    height: 80px;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    text-align: center;
+    padding: 20px;
+}
+.textCon p{
+    font-size: 20px;
+    font-weight:bold;
+    line-height: 24px;
+    margin-top: 5px;
+
+}
+.textWrap{
+    width:50%;
+    float: left;
+    padding: 30px 0 0 20px;
+}
+.textWrap p{
+    line-height: 24px;
+    padding: 10px 0;
+}
+/*第四页*/
+.pageFour{
+    background-color:#f4f4f4 ;
+}
+.myWork{
+    position: relative;
+    margin-top: 40px;
+}
+.program{
+    position: relative;
+    overflow: hidden;
+}
+.workText{
+    width: 95%;
+    padding: 0 0 47px 159px;
+    position: relative
+}
+.workText:after{
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top:0;
+    left: 140px;
+    border-left: solid 1px #80d6f2 ;
+}
+.workTime{
+    width: 120px;
+    height: 120px;
+    float: left;
+    padding: 40px 0 40px 0;
+    font-size: 15px;
+    color: #fff;
+    background: #E86064;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top:20px;
+    left:0;
+}
+.bubble{
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #fff;
+    position: absolute;
+    top: 20px;
+    left: 160px
+}
+.More{
+    background: #fff;
+    border-bottom: solid 4px #e5e5e5;
+    padding: 22px 47px 20px 47px;
+    margin-left: 15px;
+    text-align: left
+}
+
+.More h4{
+    color: #666;
+    padding-bottom: 3px;
+}
+
+.More h5{
+    color: #666;
+}
+
+.More p{
+    color: #666;
+    line-height: 21px
+}
+/*第五页*/
+.connection{
+    margin: 40px auto ;
+}
+.message{
+    overflow: hidden;
+    padding: 0 0 20px 0;
+}
+
+.message li{
+    width: 33.33%;
+    float: left;
+    margin: 20px 0;
+    overflow: hidden
+}
+
+.message li span{
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: 0 auto 20px;
+    background: url("images/sprite_img.png");
+}
+.message li p{
+    text-align: center;
+    font-size: 20px;
+}
+
+.message li p a{
+    color: #333;
+}
+
+.message li:nth-child(1) span{
+     background-position:0 -70px ;
+ }
+
+.message li:nth-child(2) span{
+    background-position: -50px -70px ;
+}
+
+.message li:nth-child(3) span{
+    background-position:-100px -70px ;
+}
+.waves{
+    width: 100%;
+    height: 300px;
+    background-color: #9eddf2;
+}
+.waves .box{
+    width:100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.box img{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+.box img:nth-child(1){
+    animation: move 1s linear infinite alternate;
+}
+
+.box img:nth-child(2){
+    animation:move 0.5s linear infinite alternate;;
+}
+
+.sun{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 40px;
+    top: 40px;
+}
+
+.sun:after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,.8);
+    position: absolute;
+    left: 50%;
+    margin-left: -25px;
+    top: 50%;
+    margin-top: -25px;
+    animation: sunScale 1s linear infinite alternate;
+}
+.sun:before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,.6);
+    position: absolute;
+    left: 50%;
+    margin-left: -40px;
+    top: 50%;
+    margin-top: -40px;
+    animation: sunScale 1s 0.5s linear infinite alternate;
+}
